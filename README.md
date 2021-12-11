@@ -27,6 +27,16 @@ For all the adversarial trained model, you can download them from [here](https:/
 
 After downloading all the model, please put them under the directory of `model`.
 
+For some models, for the convenience of coding, we have made some adjustments to the variable names. In order to implement these changes, you can use the file `misc.py`.
+- For `pnasnet-5_mobile_model_modify.ckpt`, we add variable scope of `pnasnet_mobile` before all variable names.  
+- For `nasnet-a_mobile_model_modify.ckpt`, we add variable scope of `nasnet_mobile` before all variable names.  
+- For `mobilenet_v2_1.4_224_modify.ckpt`, we replace variable scope of `MobilenetV2` with `MobilenetV2_1.4` at the beginning of the variable names.  
+- For `adv_inception_v3_rename.ckpt`, we replace variable scope of `InceptionV3` with `AdvInceptionV3` at the beginning of the variable names.  
+- For `ens3_adv_inception_v3_rename.ckpt`, we replace variable scope of `InceptionV3` with `Ens3AdvInceptionV3` at the beginning of the variable names.  
+- For `ens4_adv_inception_v3_rename.ckpt`, we replace variable scope of `InceptionV3` with `Ens4AdvInceptionV3` at the beginning of the variable names.  
+- For `ens_adv_inception_resnet_v2_rename.ckpt`, we replace variable scope of `InceptionResnetV2` with `EnsAdvInceptionResnetV2` at the beginning of the variable names.
+
+
 ### Running
     CUDA_VISIBLE_DEVICES=X bash run_attack.sh
 
